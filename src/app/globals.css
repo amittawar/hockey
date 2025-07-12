@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.nav__toggle {
+  position: absolute;
+  cursor: pointer;
+  margin: 0rem 1rem;
+  right: 0;
+}
+
+.close,
+input[type="checkbox"] {
+  display: none;
+}
+.hamburger {
+  margin-top: 0.2rem;
+}
+.nav__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+.header_area  li {
+  list-style: none;
+  display: none;
+}
+.header_menu li:first-child {
+  margin-right: auto;
+  display: block;
+}
+.nav__menu a {
+  text-decoration: none;
+  color: initial;
+  font-size: 16PX;
+}
+.nav__menu a:hover {
+  color: #08194d;
+}
+
+#nav__checkbox:checked ~ ul.nav__menu li {
+  display: block;
+}
+#nav__checkbox:checked ~ label.nav__toggle .hamburger {
+  display: none;
+}
+#nav__checkbox:checked ~ label.nav__toggle .close {
+  display: block;
+}
+
+ul.nav__menu span {
+  display: flex;
+  justify-content: space-between;
+  gap: 34px;
+}
+body, html {
+  overflow-x: hidden;
+}
+ul.nav__menu li:last-child a {
+  color: #bb103e;
+  font-weight: 600;
+}
+.footer_menu p {
+  margin-bottom: 9px;
+}
+.footer_menu h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+a.get_started_btn:hover {
+  background: #fff;
+  color: #00205b !important;
+  font-weight: 400;
+}
+.footer_menu a:hover {
+  color: #ff2863;
+}
+.footer_menu a {
+  display: block;
+  margin-bottom: 6px;
+}
+a.get_started_btn {
+  background: #c10c3e;
+  padding: 8px 20px;
+  width: max-content;
+  border-radius: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* responsive area */
+@media only screen and (min-width: 768px) {
+
+  .nav__toggle {
+    display: none;
+  }
+  .nav__menu {
+    flex-direction: row;
+  }
+  .nav__menu li {
+    display: block;
+  }
+}
+
+
+@media only screen and (max-width:767px){
+  .container {
+    width: 100%;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  .nav__menu {
+    align-items: self-start !important;
+    gap: 10px;
+  }
+
+  .header_logo img {
+    width: 140px;
+}
+
+ul.nav__menu li a {
+  margin-bottom: 4px;
+  display: inline-block;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  padding-bottom: 4px;
+  font-size: 15px;
+}
+ul.nav__menu li {
+  width: 92%;
+}
+.header_logo a {
+  border: 0px !important;
+}
+}

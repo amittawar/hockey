@@ -1,0 +1,143 @@
+section.wizard_form .react-form-wizard.md .wizard-icon-circle {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+}
+a.active .wizard-icon-container {
+    background: #c00c42 !important;
+}
+.smooth-border-left-to-right {
+    border-color: #c00c42 !important;
+}
+span.stepTitle.active {
+    color: #c00c42 !important;
+    font-weight: 600;
+}
+.checked .wizard-icon-container {
+    background: #08358c !important;
+}
+span.stepTitle {
+    color: #bababb !important;
+    font-weight: 500;
+}
+ul.form-wizard-steps.wizard-nav.wizard-nav-pills.md:before {
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: #d7d7d7;
+    position: absolute;
+    left: 0px;
+    top: 31px;
+}
+ul.form-wizard-steps.wizard-nav.wizard-nav-pills.md {
+    position: relative;
+}
+.wizard-footer-right, .wizard-footer-left {
+    background: #023188 !important;
+}
+.services_points input {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+label.custom-checkbox svg {
+    background: #e7e7e7;
+    border-radius: 100px;
+    width: 75px;
+    height: 75px;
+    padding: 12px;
+}
+
+.custom-checkbox {
+    display: inline-block;
+    padding: 5px 10px;
+    /* background-color: #007bff; */
+    color: #131212;
+    border-radius: 15px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+    width: 90%;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 9;
+    font-size: 18px;
+    border: 1px solid #cccccc2e;
+    box-shadow: 0px 3px 5px #cccccc75;
+}
+
+
+.custom-checkbox {
+    position: relative;
+    z-index: 9;
+}
+
+li {
+    list-style: none;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+}
+.services_points ul {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    width: 64%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+
+
+.custom-checkbox input[type="checkbox"]:checked + .custom-checkbox {
+    background-color: #28a745;
+}
+.custom-checkbox input[type="checkbox"]:checked::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border: 2px solid #f41e1e;
+    border-radius: 13px;
+}
+label.custom-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 15px;
+}
