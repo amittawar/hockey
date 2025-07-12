@@ -3,8 +3,16 @@ import React, { useEffect, useState } from "react";
 import Headers from "../../components/headers";
 import { RiLoader2Line } from "react-icons/ri";
 
+type TableRow = {
+  name: string;
+  year: string | null;
+  month: string | null;
+  start: string | null;
+  end: string | null;
+};
+
 export default function TournamentsTable() {
-  const [rows, setRows] = useState([]);
+  const [rows, setRows] = useState<TableRow[]>([]);
   const [loading, setLoading] = useState(true);
 
   // Pagination state
@@ -26,23 +34,22 @@ export default function TournamentsTable() {
         const table = doc.querySelector("table");
 
         if (table) {
-          const tableRows = Array.from(
-            table.querySelectorAll("tbody tr")
-          )
+          const tableRows = Array.from(table.querySelectorAll("tbody tr"))
             .map((tr) => {
               const cols = tr.querySelectorAll("td");
               if (cols.length > 0) {
                 return {
                   name: cols[0].innerHTML,
-                  year: cols[1].textContent,
-                  month: cols[2].textContent,
-                  start: cols[3].textContent,
-                  end: cols[4].textContent,
+                  year: cols[1]?.textContent ?? null,
+                  month: cols[2]?.textContent ?? null,
+                  start: cols[3]?.textContent ?? null,
+                  end: cols[4]?.textContent ?? null,
                 };
               }
               return null;
             })
-            .filter(Boolean);
+            .filter(Boolean) as TableRow[];
+
           setRows(tableRows);
         } else {
           setRows([]);
@@ -64,21 +71,12 @@ export default function TournamentsTable() {
   const indexOfFirstRow = indexOfLastRow - rowsPerPage;
   const currentRows = rows.slice(indexOfFirstRow, indexOfLastRow);
 
-  const handleFirst = () => {
-    setCurrentPage(1);
-  };
-
-  const handlePrevious = () => {
-    if (currentPage > 1) setCurrentPage((prev) => prev - 1);
-  };
-
-  const handleNext = () => {
-    if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
-  };
-
-  const handleLast = () => {
-    setCurrentPage(totalPages);
-  };
+  const handleFirst = () => setCurrentPage(1);
+  const handlePrevious = () =>
+    currentPage > 1 && setCurrentPage((prev) => prev - 1);
+  const handleNext = () =>
+    currentPage < totalPages && setCurrentPage((prev) => prev + 1);
+  const handleLast = () => setCurrentPage(totalPages);
 
   return (
     <>
